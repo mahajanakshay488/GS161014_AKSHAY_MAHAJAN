@@ -5,11 +5,11 @@ import Sidenav from './components/utils/Sidenav';
 
 function App() {
   return (
-    <div className='w-screen h-screen bg-slate-100'>
+    <div className='w-screen h-screen'>
 
       <Header />
 
-      <div className='w-full h-[calc(100%-70px)] bg-slate-200 flex' >
+      <div className='w-full h-[calc(100%-70px)] bg-gray-200 flex' >
 
         <Sidenav />
         <Main />
