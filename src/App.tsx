@@ -9,13 +9,13 @@ function App() {
 
       <Header />
 
-      <div className='w-full h-[calc(100%-60px)] bg-slate-200 flex' >
+      <div className='w-full h-[calc(100%-70px)] bg-slate-200 flex' >
 
         <Sidenav />
         <Main />
 
       </div>
-      
+
     </div>
   );
 }
