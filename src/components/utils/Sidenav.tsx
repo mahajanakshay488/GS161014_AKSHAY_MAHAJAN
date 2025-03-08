@@ -7,7 +7,8 @@ export default function Sidenav() {
 
       {
         navLinks.map((element) => (
-          <NavLink 
+          <NavLink
+          key={element.path} 
           to={element.path}
           className={({isActive})=>(`flex justify-start items-center p-2 py-3 ${isActive && 'bg-gray-200'}`)}
         >
