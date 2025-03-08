@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import useAppStore from "../../states/AppStore"
 
 import React, {
@@ -11,6 +10,7 @@ import {
 } from "ag-grid-community";
 import { StoreData } from "../../utilities/interfaces";
 import Grid from "../common/Grid";
+import AddButton from "../common/AddButton";
 
 
 const columnDefs : ColDef[] =[
@@ -49,6 +49,10 @@ export default function Store() {
   const onGridReady = useCallback((params: GridReadyEvent) => {
     setRowData(stores);
   }, [stores]);
+
+  const addStore = () => {
+    console.log('open Modal to add store');
+  }
   
   return (
     <>
@@ -60,7 +64,7 @@ export default function Store() {
         />
       </section>
         <div className="w-full h-[60px] flex items-center pl-2">
-          <button className="text-lg font-medium px-4 py-2 bg-[#FFAB91] drop-shadow-md rounded-md uppercase" >New Store</button>
+          <AddButton onClick={addStore} >New Store</AddButton>
         </div>
     </>
   
