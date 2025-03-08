@@ -5,3 +5,12 @@ export interface StoreData {
     City: String,
     State: String
 }
+
+export interface SkusData {
+    ID: String,
+    Label: String,
+    Class: String,
+    Department: String,
+    Price: Number,
+    Cost: Number
+}
