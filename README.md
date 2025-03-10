@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# Getting Started with Data Viewer App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## State Management Library
+
+In this project I am using zustand library to manage the states in app. Since it is lightweight and easy to use.
+
+(If I need to use redux then I will use redux tookit(Slice)).
+
+## Improvements in next 4 hours
+
+I will add crud operations.
 
 ## Available Scripts
 
