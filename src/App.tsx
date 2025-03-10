@@ -19,6 +19,7 @@ function App() {
     }
   }, []);
 
+  // making ready the data for planning page
   useEffect(() => {
     if (stores.length > 0 && skus.length > 0 && planning.length > 0 && calenderData.length > 0) {
 

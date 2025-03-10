@@ -13,7 +13,7 @@ import Grid from "../common/Grid";
 import AddButton from "../common/AddButton";
 
 
-const columnDefs : ColDef[] =[
+const columnDefs: ColDef[] = [
   {
     field: '',
     cellClass: 'flex items-center',
@@ -24,16 +24,16 @@ const columnDefs : ColDef[] =[
       )
     }
   },
-  { 
+  {
     headerName: 'Seq. No',
     field: "SeqNo",
     width: 150,
     rowDrag: true,
   },
-  { 
+  {
     headerName: 'Store',
-    field: "Label", width: 250, 
-    cellClass: 'border-0 border-r-2 border-gray-200', 
+    field: "Label", width: 250,
+    cellClass: 'border-0 border-r-2 border-gray-200',
     headerClass: 'border-0 border-r-2 border-gray-200',
     resizable: false
   },
@@ -42,7 +42,8 @@ const columnDefs : ColDef[] =[
 ];
 
 export default function Store() {
-  const {stores} = useAppStore();
+  const { stores } = useAppStore();
+  const [openModal, setOpenModal] = useState(false);
 
   const [rowData, setRowData] = useState<StoreData[]>([]);
 
@@ -51,22 +52,23 @@ export default function Store() {
   }, [stores]);
 
   const addStore = () => {
-    console.log('open Modal to add store');
+    setOpenModal(true);
   }
-  
+
   return (
     <>
       <section className="w-full h-[calc(100%-60px)] p-2">
-      <Grid
-          rowData= {rowData}
+        <Grid
+          rowData={rowData}
           columnDefs={columnDefs}
           onGridReady={onGridReady}
         />
       </section>
-        <div className="w-full h-[60px] flex items-center pl-2">
-          <AddButton onClick={addStore} >New Store</AddButton>
-        </div>
+      <div className="w-full h-[60px] flex items-center pl-2">
+        <AddButton onClick={addStore} >New Store</AddButton>
+        <p className='pl-3 text-lg'>{openModal ? 'Open modal to add Store.' : ''}</p>
+      </div>
     </>
-  
+
   )
 }

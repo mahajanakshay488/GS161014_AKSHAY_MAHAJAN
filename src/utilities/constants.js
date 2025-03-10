@@ -13,10 +13,5 @@ export const navLinks = [
     path: '/planning',
     icon: 'finance',
     title: 'Planning'
-  },
-  {
-    path: '/charts',
-    icon: 'insert_chart',
-    title: 'Charts'
   }
 ]
