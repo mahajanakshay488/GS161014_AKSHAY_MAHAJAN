@@ -8,14 +8,17 @@ import {
   ValidationModule,
   CellStyleModule,
   RowDragModule,
+  NumberFilterModule,
+  TextFilterModule,
 } from "ag-grid-community";
-import { StoreData } from "../../utilities/interfaces";
 
 ModuleRegistry.registerModules([
   ClientSideRowModelModule,
   ValidationModule,
   CellStyleModule,
   RowDragModule,
+  TextFilterModule,
+  NumberFilterModule,
 ]);
 
 export default function Grid(props: any) {
@@ -28,7 +31,7 @@ export default function Grid(props: any) {
     <div style={containerStyle}>
       <div style={{ height: "100%", boxSizing: "border-box" }}>
         <div style={gridStyle}>
-          <AgGridReact<StoreData>
+          <AgGridReact
             rowData={rowData}
             columnDefs={columnDefs}
             onGridReady={onGridReady}

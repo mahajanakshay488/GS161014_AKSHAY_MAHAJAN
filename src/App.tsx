@@ -4,17 +4,29 @@ import Header from './components/utils/Header';
 import Main from './components/utils/Main';
 import Sidenav from './components/utils/Sidenav';
 import useAppStore from './states/AppStore';
+import calenderData from './assets/calender.json';
+import { getCalculations } from './utilities/helpers';
 
 function App() {
 
-  const { setDefault, reset } = useAppStore();
+  const { stores, skus, planning, setCalculations,setDefault, reset } = useAppStore();
 
-  useEffect(()=>{
+  // setting the default data to state and reset it.
+  useEffect(() => {
     setDefault();
-    return () =>{
+    return () => {
       reset();
     }
-  },[]);
+  }, []);
+
+  useEffect(() => {
+    if (stores.length > 0 && skus.length > 0 && planning.length > 0 && calenderData.length > 0) {
+
+      const calculationsData = getCalculations(planning, stores,  skus);
+      setCalculations(calculationsData);
+
+    }
+  }, [stores, skus, planning, calenderData]);
 
   return (
     <div className='w-screen h-screen'>

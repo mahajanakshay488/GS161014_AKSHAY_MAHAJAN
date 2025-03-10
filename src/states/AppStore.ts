@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import storesData from '../assets/stores.json';
 import skusData from '../assets/skus.json';
+import planningData from '../assets/planning.json';
 import { SkusData, StoreData } from '../utilities/interfaces';
 
 type State = {
@@ -8,11 +9,13 @@ type State = {
   skus: SkusData[];
   planning: any[];
   calender: any[];
+  calculations: any[];
 }
 
 type Action = {
-  reset: () => void
-  setDefault: () => void
+  reset: () => void;
+  setDefault: () => void;
+  setCalculations: (data: any) => void;
 }
 
 const initialState: State = {
@@ -20,6 +23,7 @@ const initialState: State = {
     skus: [],
     planning: [],
     calender: [],
+    calculations: [],
 }
 
 const useAppStore = create<State & Action>((set, get) => ({
@@ -30,8 +34,12 @@ const useAppStore = create<State & Action>((set, get) => ({
     setDefault: () => {
         set({
           stores: storesData,
-          skus: skusData
+          skus: skusData,
+          planning: planningData
         });
+    },
+    setCalculations: (data:any) => {
+      set({calculations: data});
     }
 }));
 
