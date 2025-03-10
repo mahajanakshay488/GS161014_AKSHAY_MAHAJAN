@@ -1,7 +1,8 @@
 # Getting Started with Data Viewer App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+Please click below link to see the live app. 
+[Data Viewer App](https://gs161014-akshay-mahajan.onrender.com/).
+ 
 ## State Management Library
 
 In this project I am using zustand library to manage the states in app. Since it is lightweight and easy to use.
